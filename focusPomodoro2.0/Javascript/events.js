@@ -11,7 +11,24 @@ import{
     cardFlorestChecked,
     cardRainChecked,
     cardCoffeChecked,
-    cardFireplaceChecked
+    cardFireplaceChecked,
+    botaoAtivarDarkMode,
+    botaoDesativarDarkMode,
+    toggleDay,
+    toggleDark,
+    separadorMinutos,
+    body,
+    imgPlay,
+    imgPause,
+    imgIncreaseDisplay,
+    imgTurnDownDisplay,
+    imgPausePath2,
+    svgFlorest,
+    svgRain,
+    svgCoffe,
+    svgFireplace,
+
+    
 } from "./elements.js"
 
 import {
@@ -19,7 +36,9 @@ import {
     displayTimerPause,
     displayClear,
     aumentarTempo,
-    diminuirTempo
+    diminuirTempo,
+    minutesDisplay,
+    secondsDisplay
 } from "./timer.js"
 
 import sounds from "./sounds.js"
@@ -140,4 +159,149 @@ cardFireplaceChecked.addEventListener('click',function(){
     cardFireplaceChecked.classList.add('hide')
     Sounds.fireplaceModePause()
 })
+
+botaoAtivarDarkMode.addEventListener('click', function(){
+    styleChangeDark()
+}) 
+botaoDesativarDarkMode.addEventListener('click', function(){
+    styleChageLight()
+})
+
+function styleChangeDark(){
+ setTimeout(
+    function(){
+        minutesDisplay.style.cssText = 
+            'color: white;' 
+        ;
+        secondsDisplay.style.cssText = 
+            'color: white;' 
+        ;
+        separadorMinutos.style.cssText = 
+            'color: white;' 
+        ;
+        body.style.cssText =
+            'background: #121214;'
+        ;
+        imgPlay.style.cssText =
+            'fill:#ffffff;'
+        ;    
+        imgPause.style.cssText =
+            'fill:#ffffff;'
+        ;
+        imgPausePath2.style.cssText =
+            'fill:#ffffff;'
+        ; 
+        imgIncreaseDisplay.style.cssText =
+            'fill:#ffffff;'
+        ;  
+        imgTurnDownDisplay.style.cssText =
+            'fill:#ffffff;'
+        ;
+        cardFlorest.style.cssText =
+            'background:#29292E;'
+        ;
+        svgFlorest.style.cssText =
+            'fill:#C4C4CC;'
+        ;
+        cardRain.style.cssText =
+            'background:#29292E;'
+        ;
+        svgRain.style.cssText =
+            'fill:#C4C4CC;'
+        ;
+        cardCoffe.style.cssText =
+            'background:#29292E;'
+        ;
+        svgCoffe.style.cssText =
+            'fill:#C4C4CC;'
+        ;
+        cardFireplace.style.cssText =
+            'background:#29292E;'
+        ;
+        svgFireplace.style.cssText =
+            'fill:#C4C4CC;'
+        ;
+        cardFlorestChecked.style.cssText =
+            'background:#0A3442'
+        ;  
+        cardRainChecked.style.cssText =
+            'background:#0A3442'
+        ;
+        cardCoffeChecked.style.cssText =
+            'background:#0A3442'
+        ;
+        cardFireplaceChecked.style.cssText =
+            'background:#0A3442'
+        ;      
+             
+    }, 1000) 
 }
+
+function styleChageLight(){ 
+    setTimeout(
+        function(){
+            minutesDisplay.style.cssText = 
+            'color: rgba(50, 50, 56, 100%);' 
+            ;
+            secondsDisplay.style.cssText = 
+            'color: rgba(50, 50, 56, 100%);' 
+            ;
+            separadorMinutos.style.cssText = 
+            'color: rgba(50, 50, 56, 100%);' 
+            ;
+            body.style.cssText =
+            'background: #ffffff;'
+            ;
+            imgPlay.style.cssText =
+            'fill:rgba(50, 50, 56, 100%);'
+            ;    
+            imgPause.style.cssText =
+            'fill:rgba(50, 50, 56, 100%);'
+            ;
+            imgPausePath2.style.cssText =
+            'fill:rgba(50, 50, 56, 100%);'
+            ; 
+            imgIncreaseDisplay.style.cssText =
+            'fill:rgba(50, 50, 56, 100%);'
+            ;  
+            imgTurnDownDisplay.style.cssText =
+            'fill:rgba(50, 50, 56, 100%);'
+            ;
+            cardFlorest.style.cssText =
+            'background:#E1E1E6;'
+            ;
+            svgFlorest.style.cssText =
+                'fill:#323238;'
+            ;
+            cardRain.style.cssText =
+                'background:#E1E1E6;'
+            ;
+            svgRain.style.cssText =
+                'fill:#323238;'
+            ;
+            cardCoffe.style.cssText =
+                'background:#E1E1E6;'
+            ;
+            svgCoffe.style.cssText =
+                'fill:#323238;'
+            ;
+            cardFireplace.style.cssText =
+                'background:#E1E1E6;'
+            ;
+            svgFireplace.style.cssText =
+                'fill:#323238;'
+            ;
+            cardFlorestChecked.style.cssText =
+                'background:#02799D'
+            ;  
+            cardRainChecked.style.cssText =
+                'background:#02799D'
+            ;
+            cardCoffeChecked.style.cssText =
+                'background:#02799D'
+            ;
+            cardFireplaceChecked.style.cssText =
+                'background:#02799D'
+            ;  
+        }    , 1000)}
+}      

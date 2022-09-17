@@ -67,5 +67,7 @@ const secondsDisplay = document.querySelector('.secondsDisplay')
     displayTimerPause,
     displayClear,
     aumentarTempo,
-    diminuirTempo
+    diminuirTempo,
+    minutesDisplay,
+    secondsDisplay
   }

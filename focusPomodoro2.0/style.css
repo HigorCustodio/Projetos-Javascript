@@ -15,7 +15,7 @@
     /*Variaveis representando altura e largura dos buttons*/
     --width-buttons-timer-functions-mobile:clamp(3.0rem, 5vw + 8vw, 4.5rem);;
     --width-buttons-timer-functions-media:clamp(3.0rem, 5vw + 3vw, 6.5rem);
-    --width-icons-buttons-template-modes:3.8rem;
+    --width-icons-buttons-template-modes:4.2rem;
     
     --height-buttons-timer-functions-mobile:clamp(3.0rem, 5vw + 8vw, 4.5rem);
     --height-buttons-timer-functions-media:clamp(3.0rem, 5vw + 3vw, 6.5rem);
@@ -30,22 +30,120 @@
     font-size: 62.5%;
 }
 body{
-    background-image: url(/Images/backgroundImage.jpg);
+    background:#FFFFFF;
     background-repeat: no-repeat;
     font-family: var(--ff-body);
     font-size: 1.6rem;
+    position: relative;
+    display:grid;
+    place-items:center;
+    margin-top: 200px;
 }
 .page{
+   
     height: 100vh;
     display: grid;
     place-items: center;
     align-content: center;
     gap: 5rem;
 }
+
+.toggle{
+   position:relative;
+    
+   width:120px;
+   height:60px;
+    
+   display:flex;
+   justify-content:end;
+   align-items:center;
+   
+   background-color:rgba(0, 0, 0, 0.1);
+   border-radius:50px;
+   border:2px solid rgba(0, 0, 0, 0.1);
+}
+.sol img, .lua svg{
+  width: 40px;
+  height:40px;
+}
+.sol{
+  position:absolute;
+  top:4px;
+  left:5px;
+  z-index:2;
+  
+  width:110px;
+  height:50px;
+  
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  background:#fdffd9;
+  border:1px solid rgba(0, 0, 0, 0.1);
+  border-radius:50px;
+}
+.lua{
+  position:absolute;
+  top:4px;
+  left:4px;
+    
+  width:110px;
+  height:50px;
+  
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  background:#9380b7;
+  border:1px solid rgba(0, 0, 0, 0.1);
+  
+  border-radius:50px;
+}
+.button-sol{
+  
+  cursor:pointer;
+  position:absolute;
+  right:0px;
+  
+  width:50px;
+  height:50px;
+  border-radius:50px;
+  border:none;
+  background-color:white;
+  box-shadow:1px 1px 5px;
+  
+}
+.button-lua{
+  
+  cursor:pointer;
+  position:absolute;
+  left:-1px;
+  
+  width:50px;
+  height:50px;
+  border-radius:50px;
+  border:none;
+  background-color:white;
+  box-shadow:1px 1px 5px;
+  z-index:5;
+}
+.sol img{
+  position:absolute;
+  left:5px;
+  
+}
+.lua svg{
+  position:absolute;
+  right:5px;
+}
+.ativar-dark-mode{
+  animation: ativarDarkMode 800ms ease-in 200ms forwards 1;
+}
+.desativar-dark-mode{
+  animation: desativarDarkMode 800ms ease-in 200ms forwards 1;
+}
 .hide{
     display:none;
 }
-
 /*Estilização do timer*/
 .timer-functions{
     display: flex;
@@ -74,7 +172,7 @@ body{
     cursor: pointer;
     margin-bottom: 5rem;
 }
-.timer-functions .buttons-wrapper img{
+.timer-functions .buttons-wrapper svg{
     width: var(--width-buttons-timer-functions-mobile);
     height: var(--height-buttons-timer-functions-mobile);
 }
@@ -105,7 +203,7 @@ body{
     border-radius: 2.4rem;
     cursor: pointer;
 }
-.template-modes button img{
+.template-modes button div svg{
     width: var(--width-icons-buttons-template-modes);
     height: var(--height-icons-buttons-template-modes);
 }
@@ -116,10 +214,10 @@ body{
     background: #02799D;
 }
 .template-modes .template-cards :nth-child(2), .template-modes :nth-child(4){
-  margin-left: 1rem;
+    margin-left: 1rem;
 }
 .template-modes .template-cards :nth-child(3), .template-modes :nth-child(4){
-  margin-top: clamp(5px, 1vw + 25vw, 12.5rem);
+    margin-top: clamp(5px, 1vw + 25vw, 12.5rem);
 }
 .template-modes .button-florest{
     grid-area:florest;
@@ -134,6 +232,28 @@ body{
 }
 .template-modes .button-fireplace{
     grid-area:fireplace;
+}
+
+
+@keyframes ativarDarkMode {
+    from{
+        transform: translateX(0px);
+        width:70px;
+    }
+    to{
+        width:50px;
+        transform: translateX(-65px);
+    }
+}
+@keyframes desativarDarkMode{
+    from{
+        transform: translateX(0px);
+        width:70px;
+    }
+    to{
+        transform:translateX(65px);
+        width:50px;
+    }
 }
 @media (min-width:650px){
     .timer-functions{
@@ -188,3 +308,4 @@ body{
         margin-top: 4.5rem;
     }
 }
+
