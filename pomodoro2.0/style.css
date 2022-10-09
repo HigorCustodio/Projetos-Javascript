@@ -1,0 +1,424 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /*Variavel representando a font-family*/
+    --ff-body:'Roboto', sans-serif;
+
+    /*Variaveis representando cor dos objetos*/
+    --color-text:rgba(50, 50, 56, 100%);
+    --color-icons-buttons-template-modes:rgba(50, 50, 56, 100%);
+    --bg-body:#ffffff;
+    --bg-cards:#E1E1E6;
+    --bd-cards-checked:#02799D;
+    --bg-svg-card:#323238;
+    --bg-svg-card-checked:#ffffff;
+    --bg-darkMode:#323238;
+
+
+    font-size: 62.5%;
+}
+body{
+    
+    display: grid;
+    place-items: center;
+    
+    background-color: var(--bg-body);
+    
+    font-family: var(--ff-body);
+    
+    margin-top: 20rem;
+    font-size: 1.6rem;
+}
+.page{
+    height: 100vh;
+    position: relative;
+}
+
+/*Estilizando Temporizador e controles*/
+.temporizador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+
+    margin-bottom: 5rem;
+}
+.displayTemporizador {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.displayTemporizador span{
+    font-size: 8.5rem;
+    color: var( --color-text);
+    font-weight: 500;
+    line-height: 11.2rem;
+}
+.controlesTemporizador button{
+    border: none;
+    border-radius: 45px;
+    background: none;
+    cursor: pointer;
+}
+.controlesTemporizador button:hover{
+    filter: brightness(150%);
+    transform: scaleX(1.2) scaleY(1.2);
+    cursor: pointer;
+}
+.controlesTemporizador button svg path{
+    fill:var(--color-icons-buttons-template-modes);
+}
+.controlesTemporizador button{
+    margin: 0.5rem;
+}
+
+/*Estilizando Cards*/
+.cards{
+    display: grid;
+    place-items: center;
+    gap: 15px;
+    grid-template-areas: "Florest Rain" "Coffe Fireplace"; 
+}
+.cards .cardFlorest{
+    grid-area: Florest;
+}
+.cards .cardRain{
+    grid-area: Rain;
+}
+.cards .cardCoffe{
+    grid-area: Coffe;
+}
+.cards .cardFireplace{
+    grid-area: Fireplace;
+}
+.cards .cardFlorestChecked{
+    grid-area: Florest;
+}
+.cards .cardRainChecked{
+    grid-area: Rain;
+}
+.cards .cardCoffeChecked{
+    grid-area: Coffe;
+}
+.cards .cardFireplaceChecked{
+    grid-area: Fireplace;
+}
+.cards .cardFlorestPadrao, .cardRainPadrao, .cardCoffePadrao, .cardFireplacePadrao{
+    width: 11.0rem;
+    height: 12.25rem;
+    background-color:  var(--bg-cards);
+    border-radius: 24px;
+    border: none;
+}
+.cards button:hover{
+    filter: brightness(85%);
+    transform: scaleX(1.2) scaleY(1.2);
+    cursor: pointer;
+}
+.cards button .controladorVolume input[type=range]{
+    -webkit-appearance: none;
+    outline: none;
+       
+    width:8rem;
+    height: 4px;
+
+    border-radius: 50px;
+    
+    background-color: var(--bg-darkMode);
+    
+    margin-top: 1.5rem;
+}
+.cards button .controladorVolume input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    
+    width:12px;
+    height:12px;
+    background:var( --bg-darkMode);;
+    border-radius:50%;
+}
+.cardImage svg path{
+    fill:var(--bg-svg-card);
+}
+
+/*Estilizando Cards Checked*/
+.cards .cardFlorestChecked, .cardRainChecked, .cardCoffeChecked, .cardFireplaceChecked{
+    background-color: var(--bd-cards-checked);
+    width: 11.0rem;
+    height: 12.25rem;
+    border-radius: 24px;
+    border: none;
+}
+.cards .cardImageChecked svg path{
+    fill:var(--bg-svg-card-checked);
+}
+.cards .cardFlorestChecked #controladorVolumeCard{
+    background-color: #ffffff;
+}
+.cards .cardFlorestChecked #controladorVolumeCard::-webkit-slider-thumb{ 
+    background-color: #ffffff;
+}
+.cardRainChecked #controladorVolumeCard{
+    background-color: #ffffff;
+}
+.cardRainChecked #controladorVolumeCard::-webkit-slider-thumb{
+    background-color: #ffffff;
+}
+.cardCoffeChecked #controladorVolumeCard{
+    background-color: #ffffff;
+}
+.cardCoffeChecked #controladorVolumeCard::-webkit-slider-thumb{
+    background-color: #ffffff;
+}
+.cardFireplaceChecked #controladorVolumeCard{
+    background-color: #ffffff;
+}
+.cardFireplaceChecked #controladorVolumeCard::-webkit-slider-thumb{
+    background-color: #ffffff;
+}
+
+/*Toggle Dark/Light Mode*/
+.toggle{
+    position:absolute;
+    top: -90px;
+    right: 5px;
+     
+    width:80px;
+    height:40px;
+     
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    
+    background-color:rgba(255, 254, 254, 0.404);
+    border-radius:50px;
+    border:2px solid rgba(0, 0, 0, 0.1);
+}
+.sol img, .lua svg{
+  width:25px;
+  height:25px;
+}
+.sol{
+  position:absolute;
+  top:0px;
+  left:1px;
+  z-index:2;
+  
+  width:75px;
+  height:35px;
+  
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  background:#fdffd9;
+  
+  border-radius:50px;
+}
+.lua{
+    position:absolute;
+    top: 0.5px;
+    right:1px;
+    z-index:2;
+    
+    width:75px;
+    height:35px;
+  
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background:#9380b7;
+    border:1px solid rgba(0, 0, 0, 0.1);
+    
+    border-radius:50px;
+}
+.button-sol{
+  
+  cursor:pointer;
+  position:absolute;
+  right:0px;
+  
+  width: 30px;
+  height:30px;
+  border-radius:50px;
+  border:none;
+  background-color:white;
+  box-shadow:1px 1px 5px;
+  
+}
+.button-lua{
+  cursor:pointer;
+  position:absolute;
+  left:1px;
+  
+  
+  width: 30px;
+  height:30px;
+  border-radius:50px;
+  border:none;
+  background-color:white;
+  box-shadow:1px 1px 5px;
+  z-index:5;
+}
+.sol img{
+  position:absolute;
+  left:5px;
+  
+}
+.lua svg{
+  position:absolute;
+  right:5px;
+}
+.ativar-dark-mode{
+  animation: ativarDarkMode 800ms ease-in 200ms forwards 1;
+}
+.desativar-dark-mode{
+  animation: desativarDarkMode 800ms ease-in 200ms forwards 1;
+}
+.hide{
+    display: none;
+}
+@keyframes ativarDarkMode {
+    from{
+        transform: translateX(0px);
+        width:45px;
+    }
+    to{
+        width:30px;
+        transform: translateX(-48px);
+    }
+}
+@keyframes desativarDarkMode{
+    from{
+        transform: translateX(0px);
+        width:45px;
+    }
+    to{
+        transform:translateX(48px);
+        width:30px;
+    }
+}
+@media (min-width:780px) {
+    body{
+        margin-top: 2rem;
+    }
+    .page{
+        display: flex;
+        flex-direction: row;
+        gap: 10rem;
+    }
+    .displayTemporizador{
+        margin-top: 40px;
+        gap: 1rem;
+    }
+    .displayTemporizador span{
+        font-size: 12rem;
+    }
+    .controlesTemporizador svg, svg{
+        margin: 0.5rem;
+    }
+    .controlesTemporizador button svg{
+        height:4.8rem;
+        width:4.8rem;
+    }
+    .controlesTemporizador button{
+        margin: 1rem;
+    }
+    .cards{
+        gap: 3rem;
+        align-content: center
+    }
+    .cards .cardFlorestPadrao, .cardRainPadrao, .cardCoffePadrao, .cardFireplacePadrao{
+        width: 13.5rem;
+        height: 14.75rem;
+    }
+    .cards .cardFlorestChecked, .cardRainChecked, .cardCoffeChecked, .cardFireplaceChecked{
+        width: 13.5rem;
+        height: 14.75rem;
+    }
+    .cards button .controladorVolume input[type=range]{
+        width:10rem;
+        height: 5px;
+        margin-top: 2.2rem;
+    }
+    .cards button .controladorVolume input[type=range]::-webkit-slider-thumb{
+        width:16px;
+        height:16px;
+    }
+    .cards svg{
+        width:4.5rem ;
+        height: 5.8rem;
+    }
+    .toggle{
+        top: 60px;
+        right: 5px;
+    }
+    .lua svg{
+        position:absolute;
+        right:-2px;
+    }
+}
+
+@media (min-width:1000px) {
+    .page{
+        gap: 19.2rem;
+    }
+    .displayTemporizador{
+        margin-top:4.8rem;
+    }
+    .displayTemporizador span{
+        font-size: 12.67rem;
+    }
+    .controlesTemporizador svg, svg{
+        margin: 1rem;
+    }
+    .cards{
+        gap: 3.2rem;
+    }
+    .cards .cardFlorestPadrao, .cardRainPadrao, .cardCoffePadrao, .cardFireplacePadrao{
+        width: 13.8rem;
+        height: 15.2rem;
+    }
+    .cards .cardFlorestChecked, .cardRainChecked, .cardCoffeChecked, .cardFireplaceChecked{
+        width: 13.8rem;
+        height: 15.2rem;
+    }
+    .cards svg{
+        margin-top:2.4rem;
+    }
+    .cards .cardFlorestPadrao svg, .cardFlorestChecked svg{
+        width: 4.421rem;
+        height: 5.6rem;
+    }
+    .cards .cardRainPadrao svg, .cardRainChecked svg{
+        width: 5.263rem;
+        height: 5.6rem;
+    }
+    .cards .cardCoffePadrao svg, .cardCoffeChecked svg{
+        width: 5.6rem;
+        height: 5.6rem;
+    }
+    .cards .cardFireplacePadrao svg, .cardFireplaceChecked svg{
+        width: 4.716rem;
+        height: 5.6rem;
+    }
+    .cards button .controladorVolume input[type=range]{
+        width:10rem;
+        height: 5px;
+        margin-top: 2.2rem;
+    }
+    .cards button .controladorVolume input[type=range]{
+        width:9rem;
+        height: 0.4rem;
+        margin: 3.2rem 0 3rem;
+    }
+    .lua svg{
+        position:absolute;
+        right:-4px;
+    }
+}
+
+
