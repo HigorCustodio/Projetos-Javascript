@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <meta charset="UTF-8">
+    <meta name="description" content="Single Page Aplication">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA Universe</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/pages/style/home.css">
+    <script src="/js/fucntionCards.js" defer></script>
+    
+</head>
+<body>
+    <nav>
+        <div class="navFirstContent">
+            <img src="/images/vectorLogo.svg" alt="imagem redemoinho representando uma galáxia">
+
+            <ul class="navLink">
+                <li><a class="homeNav" href="/" >Home</a></li>
+                <li><a class="universeNav" href="/universe" >O Universo</a></li>
+                <li><a class="explorationNav" href="/exploration">Exploração</a></li>
+            </ul>
+        </div>    
+        <div class="dropdown">
+            <button class="btn dropdown" id="dropdownNav"type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="/images/menuIcon.svg" alt="imagem com 9 cubos representando um menu">
+            </button>
+            
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="dropdownHomeNav" href="/home" onclick="route()">Home</a>
+                <a class="dropdown-item" id="dropdownUniverseNav" href="/universe" onclick="route()">O Universo</a>
+                <a class="dropdown-item" id="dropdownExplorationNav" href="/exploration" onclick="route()">Exploração</a>
+            </div>
+        </div>      
+    </nav>
+
+    <div id="app"></div>   
+
+    <script src="/js/index.js" type="module" ></script>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous">
+    </script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous">
+    </script>
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous">
+    </script>
+    
+</body>
+</html>

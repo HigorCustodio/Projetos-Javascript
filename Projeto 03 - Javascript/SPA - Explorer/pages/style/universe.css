@@ -1,0 +1,154 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    /*Variaveis para font-family*/
+    --ff-content:'Roboto', sans-serif;
+    
+    /*Variaveis para tamanho de fonts*/
+    --fs-body:1.6rem;
+    --fs-container-h1:clamp(3.8rem, 8vw + 1vw, 4.2rem);
+    --fs-container-text:1.8rem;
+    --fs-navLinks:2.2rem;
+
+    /*Variaveis para background color*/
+    --bg-dropdown-items-hover:rgba(27, 87, 112, 0.36);
+    --bg-dropdown:rgba(20, 63, 82, 0.36);
+    --bg-containerText: rgba(20, 63, 82, 0.36);
+    --bg-fill-svg-arrow:#5ba4c4de;
+
+    /*Variaveis cor fonte*/
+    --nav-navLink-font-color:#C4C4CC;
+    --nav-navLink-font-color-checked:#ffffff;
+    --nav-dropdown-font-color:#fff;
+    --container-h1-font-color:#fff;
+    --container-p-font-color:#fff;
+   
+
+    /*Variaveis para width e height*/
+    --containerText-width:clamp(33rem, 5vw + 5vw, 34.5rem);
+
+    --displayBtnRight: block;
+    --displayBtnLeft: none;
+    
+    font-size: 62.5%;
+}
+
+body{
+    font-family: var(--ff-content);
+    font-weight: 400;
+    font-size: var(--fs-body);
+    
+    background-repeat: no-repeat;
+    background-image:url(/images/mountains-universe02.png);
+    background-size:cover;
+}
+body .page{
+    height: 100vh;
+}
+body .containerUniverse{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+    font-family: var(--ff-content);
+}
+body .containerUniverse .containerTitleUniverse{
+    font-size: var(--fs-container-h1);
+    color: var(--container-h1-font-color);
+    font-weight: bold;
+    margin-top: 4.5rem;
+}
+body .containerUniverse .containerTextUniverse{
+    width: var(--containerText-width);
+
+    font-size: var(--fs-container-text);
+    color: var(--container-p-font-color);
+    border-radius: 33px;
+    background-color:var(--bg-containerText);
+    margin-top: 7.5rem;
+    position: relative;
+}
+body .containerUniverse .containerTextFirstUniverse{
+    display: var(--displayBtnRight);
+    padding: 3rem 1.25rem 3rem 2.0rem;
+}
+body .containerUniverse .containerTextSecondUniverse{
+    display: var(--displayBtnLeft);
+    padding: 3rem 1.25rem 3rem 2.0rem;
+}
+body .containerUniverse .btn-arrow-right{
+    position: absolute;
+    bottom:-60px;
+    right: 0;
+   
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: var( --displayBtnRight);
+}
+body .containerUniverse .btn-arrow-left{
+    position: absolute;
+    bottom:-60px;
+    left: 0;
+
+    display: var(--displayBtnLeft);
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+body .containerUniverse .btn-arrow-left svg path:hover, .btn-arrow-right-universe svg path:hover{
+    fill: var(--bg-fill-svg-arrow);
+}
+body .containerUniverse .btn-arrow-left:hover, .btn-arrow-right-universe:hover{
+    transform: scaleX(1.2) scaleY(1.2);
+}
+
+@media (min-width:720px) {
+    body nav .navFirstContent .navLink{
+        display: flex;
+        flex-direction: row;
+        gap: 3.2rem;
+    }
+    body .containerHome .containerTitleHome{
+        font-weight: bold;
+        font-size: var(--fs-container-h1);
+        margin-bottom:3.6rem;
+    }
+    body nav .dropdown{
+        display: none;
+    }
+    body .containerUniverse{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:flex-start;
+        margin:6.3rem 0 0 10.2rem;
+    }
+    body .containerUniverse .containerTextUniverse{
+        width: max(64.8rem);
+        border-radius:0;
+        background-color:rgba(0, 0, 0, 0);
+        margin-top: 1.6rem;
+        position: relative;
+    }
+    body .containerUniverse .containerTextFirstUniverse{
+        display: flex;
+        padding: 3rem 1.25rem 3rem 0rem;
+    }
+    body .containerUniverse .containerTextSecondUniverse{
+        display: flex;
+        padding: 3rem 1.25rem 3rem 0rem;
+        margin-top: -6rem;
+    }
+    body .containerUniverse .btn-arrow-right{
+        display: none;
+    }
+    body .containerUniverse .btn-arrow-left{
+        display: none;
+    }
+}

@@ -1,0 +1,164 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    /*Variaveis para font-family*/
+    --ff-content:'Roboto', sans-serif;
+    
+    /*Variaveis para tamanho de fonts*/
+    --fs-body:1.6rem;
+    --fs-h2:clamp(2.4rem, 1vw + 5vw, 2.8rem);
+    --fs-container-h1:clamp(3.8rem, 8vw + 1vw, 4.2rem);
+    --fs-container-button:clamp(1.4rem, 8vw + 1vw, 2.0rem);
+    --fs-navLinks:2.2rem;
+
+
+    /*Variaveis para background color*/
+    --bg-dropdown-items-hover:rgba(27, 87, 112, 0.36);
+    --bg-dropdown:rgba(20, 63, 82, 0.36);
+    --bg-container-button:rgba(27, 87, 112, 0.1);
+    --bg-container-button-hover:#fff;
+
+    /*Variaveis cor fonte*/
+    --nav-navLink-font-color:#C4C4CC;
+    --nav-navLink-font-color-checked:#ffffff;
+    --nav-h2-font-color:#FFFFFF;
+    --nav-dropdown-font-color:#fff;
+    --container-h1-font-color:#fff;
+    --container-button:#fff;
+    --font-color-container-button-hover:#02799D;
+    
+
+    /*Variaveis para width e height*/
+    --width-container-button:clamp(19.5rem, 10px+ 10px, 21.5rem);
+    --height-container-button:clamp(4.8rem, 4vw + 4rem, 6.8rem);
+    
+    font-size: 62.5%;
+}
+#navChecked{
+    font-weight: bold;
+    color: var(--nav-navLink-font-color-checked);
+}
+
+body{
+    font-family: var(--ff-content);
+    font-weight: 400;
+    font-size: var(--fs-body);
+    
+    background-repeat: no-repeat;
+    background-image:url(/images/mountains-universe-1\ \(1\).png);
+    background-size:cover;
+}
+body nav{
+    margin: 4rem 3.4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+body nav .navFirstContent{
+    display: flex;
+    align-items: center;
+    gap: 3.227rem;
+}
+body nav a{
+    text-decoration: none;
+}
+body nav .navFirstContent .navLink{
+    display: none;
+}
+body nav .navFirstContent .navLink li{
+    list-style-type: none;
+}
+body nav .navFirstContent .navLink li:hover{
+    transform: scaleX(1.2) scaleY(1.2);
+}
+body nav .navFirstContent .navLink li a{
+    color: var(--nav-navLink-font-color);
+    font-weight: 400;
+    font-size: var(--fs-navLinks);
+    text-decoration: none;
+
+
+}
+body nav .dropdown #dropdownNav{
+    background: none;
+}
+body nav .dropdown-menu{
+    background:var(--bg-dropdown) ;
+    
+}
+body nav .dropdown-menu.show{
+    left: -10px!important;
+}
+body nav .dropdown-item{
+    color: var( --nav-dropdown-font-color);
+}
+body nav .dropdown-item:hover{
+    background-color: var(--bg-dropdown-items-hover);
+    color: var( --nav-dropdown-font-color)
+}
+body .page{
+    height: 100vh;
+}
+body .containerHome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--container-h1-font-color);    
+
+    margin-top: 19rem;
+}
+body .containerHome .containerTitleHome{
+    font-weight: bold;
+    font-size: var(--fs-container-h1);
+    margin-bottom:14rem;
+}
+body .containerHome .containerHomeButton{
+    width: var(--width-container-button);
+    height: var(--height-container-button);
+
+    text-transform: uppercase;
+    font-size: var(--fs-container-button);
+    font-weight: bold;
+    color: var(--container-button);
+    
+    border-radius:5px;
+    border: 2px solid #fff;
+    background-color: var(--bg-container-button);
+
+    padding: 1.2rem 3.2rem;
+}
+body .containerHome .containerHomeButton:hover{
+    background-color: var(--bg-container-button-hover);
+    color: var(--font-color-container-button-hover);
+    transform: scaleX(1.2) scaleY(1.2);
+    cursor: pointer;
+}
+
+.titleSelect{
+    font-weight: bold!important;
+    color: var(--container-h1-font-color)!important;
+}
+
+@media (min-width:720px) {
+    body nav{
+        margin-left: 7.2rem;
+    }
+    body nav .navFirstContent .navLink{
+        display: flex;
+        flex-direction: row;
+        gap: 3.6rem;
+    }
+    body .containerHome .containerTitleHome{
+        font-weight: bold;
+        font-size: var(--fs-container-h1);
+        margin-bottom:3.6rem;
+    }
+    body nav .dropdown{
+        display: none;
+    }
+    
+}
